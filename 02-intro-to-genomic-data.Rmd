@@ -3,7 +3,7 @@
 
 Borrow from https://hutchdatascience.org/Choosing_Genomics_Tools/
 
-git checkout 
+
 ## What is genomic data?
 Genome: Complete set of DNA in an organism.
 
