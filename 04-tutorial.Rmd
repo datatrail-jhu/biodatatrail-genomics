@@ -23,11 +23,12 @@ https://hutchdatascience.org/Choosing_Genomics_Tools/
 
 ```{r}
 # Installing Your Packages
-if (!require("BiocManager", quietly = TRUE))
-  {install.packages("BiocManager")}
+if (!require("BiocManager", quietly = TRUE)){
+  install.packages("BiocManager")
+}
 
 
-if ('TCGAbiolinks' %in% installed.packages()) {
+if (!'TCGAbiolinks' %in% installed.packages()) {
     BiocManager::install("TCGAbiolinks")
 }
 # Loading packages for R to recognize
@@ -36,17 +37,17 @@ library(TCGAbiolinks)
 library(dplyr)
 library(DT)
 #browseVignettes("TCGAbiolinks")
-# Making dataframe to store your data 
+# Making dataframe to store your data
 query <- GDCquery(
     project = "TCGA-BRCA",
     data.category = "Transcriptome Profiling",
     data.type = "Gene Expression Quantification",
     workflow.type = "HTSeq - Counts")
-    
+
 GDCdownload(query)
 
 data <- GDCprepare(query)
-# Exploring data 
+# Exploring data
 head(data)
 str(data)
 summary(data)
