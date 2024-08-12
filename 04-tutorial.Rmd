@@ -36,9 +36,9 @@ library(TCGAbiolinks)
 library(dplyr)
 library(DT)
 #browseVignettes("TCGAbiolinks")
-
 library(TCGAbiolinks)
-# Making dataframe to store your data 
+
+s# Making dataframe to store your data 
 query <- GDCquery(
   project = "TCGA-BRCA",
   data.category = "Transcriptome Profiling",
@@ -76,7 +76,6 @@ is.na(data)
 # Want to mutate and filter data to fit our analysis process
 Filter(data)
 subset(data)
-
 #Finding a good relationship in data, so we want to build the correlation matrtix
 cor(data)
 #Shows us numbers in tables for specific columns to show relationships
