@@ -87,7 +87,9 @@ boxplot(data$column)
 ```
 
 ```{r}
-
+# subset_data <- data %>%
+  select(starts_with("gene"), sample_type) %>%
+  column_to_rownames(var = "sample_id")
 ```
 
 ```{r}
@@ -96,6 +98,20 @@ ggplot(data, aes(x = HTSeq - Counts)) +
     ggtitle("Distribution of Gene Expression Counts") +
     xlab("Gene Expression Counts") +
     ylab("Frequency")
+
+# pheatmap(as.matrix(subset_data), 
+         scale = "row", 
+         clustering_distance_rows = ,
+         clustering_distance_cols = ,
+         clustering_method = "complete",
+         main = "Heatmap of Gene Expression")
+
+# ggplot(data, aes(x = sample_type, y = gene_expression, fill = sample_type)) +
+  geom_violin(trim = FALSE) +
+  labs(title = "Violin Plot of Gene Expression by Sample Type",
+       x = "Sample Type",
+       y = "Gene Expression") +
+  theme_minimal()
 ```
 
 ```{r}
