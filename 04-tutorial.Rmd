@@ -22,6 +22,99 @@ https://hutchdatascience.org/Choosing_Genomics_Tools/
 
 
 ```{r}
+# Installing Your Packages
+if (!require("BiocManager", quietly = TRUE)){
+  install.packages("BiocManager")
+}
+
+
+if (!'TCGAbiolinks' %in% installed.packages()) {
+    BiocManager::install("TCGAbiolinks")
+}
+# Loading packages for R to recognize
+library(BiocManager)
+library(TCGAbiolinks)
+library(dplyr)
+library(DT)
+#browseVignettes("TCGAbiolinks")
+library(TCGAbiolinks)
+
+# Making dataframe to store your data 
+query <- GDCquery(
+  project = "TCGA-BRCA",
+  data.category = "Transcriptome Profiling",
+  data.type = "Gene Expression Quantification",
+  workflow.type = "STAR - Counts"
+)
+
+#GDCquery: This function makes an object for retrieving data from the GDC.
+#project: Specifies the project of interest, in this case, "TCGA-BRCA" 
+  #The Cancer Genome Atlas (TCGA) is a project created by the National Cancer Institute (NCI) and the National Human Genome Research Institute (NHGRI). This was made to catalog genetic mutations responsible for cancer, using various genomic technologies. TCGA provides a heep of data for researchers to study the molecular mechanisms underlying different types of cancer.
+
+#data.type: Specifies the type of data, "Gene Expression Quantification" 
+#workflow.type: "STAR - Counts" indicates the data has been processed using the STAR alignment tool and is in count format.
+
+if (is.data.frame(data)) {
+  expression_column <- "HTSeq - Counts"
+}
+#This function downloads the data from the GDC based on the query object created. It fetches the data files that match the criteria in the GDCquery function.
+GDCdownload(query)
+
+#This is a preparation function used to organize the data that works better for R to recognize 
+data <- GDCprepare(query)
+
+# Exploring data 
+#Basic exploratory questions to ask to start off with. Gives a good start to know what charaterstics your data has. Will give good insight and visualations so you understand the format of the data.
+print(dim(data))
+
+# Exploring data
+head(data)
+str(data)
+summary(data)
+dim(data)
+colnames(data)
+skim(data)
+# Making sure to catch any missing values so when we plot and go deeper we do not have to be surprised when getting erros
+is.na(data)
+# Want to mutate and filter data to fit our analysis process
+Filter(data)
+subset(data)
+#Finding a good relationship in data, so we want to build the correlation matrtix
+cor(data)
+#Shows us numbers in tables for specific columns to show relationships
+table(data$column)
+boxplot(data$column)
+```
+
+```{r}
+# subset_data <- data %>%
+  select(starts_with("gene"), sample_type) %>%
+  column_to_rownames(var = "sample_id")
+```
+
+```{r}
+ggplot(data, aes(x = HTSeq - Counts)) +
+    geom_histogram(binwidth = 1) +
+    ggtitle("Distribution of Gene Expression Counts") +
+    xlab("Gene Expression Counts") +
+    ylab("Frequency")
+
+# pheatmap(as.matrix(subset_data), 
+         scale = "row", 
+         clustering_distance_rows = ,
+         clustering_distance_cols = ,
+         clustering_method = "complete",
+         main = "Heatmap of Gene Expression")
+
+# ggplot(data, aes(x = sample_type, y = gene_expression, fill = sample_type)) +
+  geom_violin(trim = FALSE) +
+  labs(title = "Violin Plot of Gene Expression by Sample Type",
+       x = "Sample Type",
+       y = "Gene Expression") +
+  theme_minimal()
+```
+
+```{r}
 sessionInfo()
 
 ```
