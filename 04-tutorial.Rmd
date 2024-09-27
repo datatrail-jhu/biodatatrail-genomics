@@ -58,7 +58,7 @@ if (is.data.frame(data)) {
   expression_column <- "HTSeq - Counts"
 }
 #This function downloads the data from the GDC based on the query object created. It fetches the data files that match the criteria in the GDCquery function.
-GDCdownload(query)
+ GDCdownload(query)
 
 #This is a preparation function used to organize the data that works better for R to recognize 
 data <- GDCprepare(query)

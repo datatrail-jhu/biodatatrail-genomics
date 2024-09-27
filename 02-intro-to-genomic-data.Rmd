@@ -5,10 +5,67 @@ Borrow from https://hutchdatascience.org/Choosing_Genomics_Tools/
 
 
 ## What is genomic data?
+Genome: Complete set of DNA in an organism.
 
+Gene: DNA segment with instructions for protein synthesis.
+
+DNA: Molecule carrying genetic instructions.
+
+Genomics: Study of genomes, including structure, function, and evolution.
+
+Sequence Data: Includes Whole Genome Sequencing (WGS) and Exome Sequencing (focuses on exons).
+
+Gene Expression Data: Transcriptomics (e.g., RNA-Seq) measures mRNA levels.
+
+Epigenetic Data: Studies chemical modifications like DNA methylation affecting gene expression.
+Variant Data: Highlights genetic differences (e.g., SNPs, Indels, Structural Variants).
+
+Biological Samples: Blood, tissue, saliva.
+
+Public Databases: GenBank, The Cancer Genome Atlas (TCGA)
+
+Medicine: Personalized medicine, disease diagnosis, and targeted therapies.
+
+Research: Understanding genetic diseases, drug discovery.
+
+Evolutionary Biology: Comparative genomics to study evolutionary relationships.
+
+Bioinformatics Software: BLAST (sequence alignment), STAR (RNA-Seq), GATK (variant calling).
+
+Statistical Methods and Visualization Tools: IGV for data visualization.
+
+
+Genomic data refers to the information obtained from studying the genomes of organisms, where a genome is the complete set of genetic material (DNA) in an organism, including all its genes. This data provides some insight into the structure, function, and evolution of genomes. Key terms in genomic data include the genome, which is the entire set of DNA including all its genes; a gene, which is a segment of DNA containing instructions for building proteins; DNA (Deoxyribonucleic Acid), the molecule that carries genetic instructions; and genomics, the study of genomes, including their structure, function, evolution, and mapping.
+  Genomic data comes in various types. Sequence data involves DNA sequencing, which determines the exact sequence of nucleotides (A, T, C, G) in a DNA molecule. Whole Genome Sequencing (WGS) refers to sequencing an entire genome, while Exome Sequencing focuses on the coding regions of the genome (exons). Gene expression data, or transcriptomics, studies RNA transcripts produced by the genome to show which genes are active and to what extent, with mRNA Sequencing (RNA-Seq) measuring the quantity of mRNA. Epigenetic data involves the study of chemical modifications to DNA and histone proteins that affect gene activity without altering the DNA sequence, including methylation patterns that can influence gene expression. Variant data highlights differences in DNA sequences between individuals, including Single Nucleotide Polymorphisms (SNPs), Insertions/Deletions (Indels), and Structural Variants.
+  Sources of genomic data include biological samples such as blood, tissue, or saliva, and public databases like GenBank, a comprehensive database of DNA sequences; The Cancer Genome Atlas (TCGA), which provides genomic data related to cancera genome browser offering data for a variety of species. Applications of genomic data span medicine, where it is used for personalized medicine by tailoring treatments based on individual genetic profiles, and for disease diagnosis and treatment by identifying genetic mutations associated with diseases and developing targeted therapies. In research, genomic data helps in understanding genetic diseases and discovering new drug targets. It also plays a role in evolutionary biology through comparative genomics, which compares genomes across different species to understand evolutionary relationships. 
+  To analyze genomic data, various tools and techniques are employed, including bioinformatics software like BLAST, STAR, and GATK for sequence alignment and variant calling, statistical methods for analyzing complex datasets, and visualization tools such as IGV (Integrative Genomics Viewer) for visualizing data. Overall, genomic data provides a window into the genetic blueprint of life, offering profound insights into organism functioning, disease mechanisms, and the potential for personalized medicine, making it essential for advancing research and developing new therapies.
 
 ## Why is genomic data important?
+Genomic data is important as it offers a deep and detailed understanding of the genetic blueprint that underpins biological processes, health, and disease. By analyzing an individual's genomic data, healthcare providers can tailor medical treatments and drug prescriptions to fit that person's unique genetic profile, a concept known as precision medicine, which can enhance treatment efficacy and minimize adverse effects. Additionally, genomic data helps identify genetic predispositions to various diseases, such as cancer, heart disease, and rare genetic disorders, enabling proactive management and preventive measures that can significantly improve outcomes and quality of life. In the field of pharmacogenomics, understanding how genes affect drug responses allows for the design of more effective therapies with fewer side effects, optimizing medication regimens, and avoiding trial-and-error prescribing. Genomic data also accelerates drug discovery and development by revealing new drug targets and creating targeted treatments for specific genetic profiles. For individuals with a family history of genetic disorders, genomic data provides valuable insights for genetic counseling, helping them understand their risk and make informed health and family planning decisions. In agriculture, genomic data is used to develop crops with improved traits, such as higher yield and disease resistance, which enhances food security and sustainability. In forensic science, genomic data aids in identifying individuals through DNA profiling for criminal investigations, paternity testing, and disaster scenarios. Additionally, in evolutionary biology and anthropology, genomic data offers insights into human evolution and genetic diversity, helping scientists understand how humans have adapted to different environments. Finally, genomic data allows for accurate and timely diagnosis of many rare diseases caused by specific genetic mutations, leading to better management and access to targeted treatments. Overall, genomic data is a powerful tool that transforms various fields by providing a deeper understanding of genetic factors and their implications.
 
 ## What are the general types of genomic data?
 
+DNA Sequence Data: This includes the raw sequence of nucleotides (A, T, C, G) in the DNA. It's fundamental for identifying genetic variants and understanding the genetic code. Examples include whole genome sequencing (WGS) and targeted sequencing.
+
+RNA Sequence Data: This represents the sequence of RNA transcripts that are produced from DNA. RNA sequencing (RNA-seq) helps understand gene expression patterns and how genes are regulated. It provides insights into which genes are active, to what extent, and how their expression changes under different conditions.
+
+Genotyping Data: This involves identifying specific genetic variants or markers in an individual's genome. Genotyping arrays or chips are used to assess hundreds of thousands to millions of single nucleotide polymorphisms (SNPs) and other variants. This type of data is often used in studies of genetic associations with diseases or traits.
+
+Epigenomic Data: This includes information on chemical modifications to DNA and histones that affect gene expression without altering the DNA sequence itself. Examples include DNA methylation and histone modification data. Epigenomic data helps understand how gene expression is regulated and how environmental factors can influence genetic activity.
+
+Structural Variant Data: This encompasses larger-scale changes in the genome, such as duplications, deletions, inversions, and translocations of large DNA segments. Structural variants can have significant impacts on gene function and are often associated with genetic disorders.
+
+Copy Number Variation (CNV) Data: This type of data involves changes in the number of copies of specific DNA segments. CNVs can contribute to genetic diversity and may be linked to certain diseases or conditions.
+
+Proteomic Data: While not strictly genomic, proteomic data complements genomic data by providing information on the proteins produced by the genome. It helps bridge the gap between genetic information and biological function, revealing how genetic variations affect protein expression and function.
+
+Metagenomic Data: This involves the analysis of genetic material from environmental samples, such as soil, water, or the human microbiome. Metagenomics helps study the diversity and function of microbial communities and their interactions with their hosts.
+
 Reminder of the “central dogma” of biology
+
+The central dogma of molecular biology is a concept that describes the flow of genetic information within a biological system. It outlines the process by which genetic information encoded in DNA is used to produce proteins, which are essential for various cellular functions. The central dogma is often summarized by the following key steps as following, DNA Replication: This is the process by which DNA makes a copy of itself. Before a cell divides, its entire genome is replicated to ensure that each new cell receives an identical copy of the genetic material.
+Transcription: During transcription, the information stored in a gene's DNA sequence is copied into a complementary RNA sequence. This process involves the enzyme RNA polymerase, which binds to a specific region of the DNA (the promoter) and synthesizes a messenger RNA (mRNA) molecule. The mRNA serves as a temporary copy of the genetic instructions that will be used in the next step. Translation: The mRNA then travels from the nucleus (in eukaryotes) to the cytoplasm, where it is translated into a protein. During translation, the mRNA sequence is read by ribosomes, which are complex molecular machines. The ribosomes use transfer RNA (tRNA) molecules to assemble amino acids into a polypeptide chain based on the sequence of codons in the mRNA. Each tRNA carries a specific amino acid and matches its anticodon with the codon on the mRNA.
+Protein Folding and Function: After translation, the polypeptide chain folds into a specific three-dimensional shape to become a functional protein. Proteins perform a wide variety of functions in the cell, including catalyzing biochemical reactions, providing structural support, and regulating cellular processes.
+                                    DNA → RNA → Protein
+                                    
+This concept highlights the directional flow of genetic information: DNA serves as the template for RNA synthesis (transcription), and RNA provides the instructions for protein synthesis (translation). While the central dogma provides a foundational framework, it is worth noting that there are exceptions and additional layers of complexity in gene expression, such as the roles of non-coding RNAs and regulatory mechanisms that influence how and when genes are expressed.
